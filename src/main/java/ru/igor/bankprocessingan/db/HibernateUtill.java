@@ -1,4 +1,4 @@
-package ru.igor.bancprocessingan.dao;
+package ru.igor.bankprocessingan.db;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

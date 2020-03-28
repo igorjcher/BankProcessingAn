@@ -1,8 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@page import="java.util.List"%>
-<%@page import="ru.igor.bancprocessingan.entities.User"%>
-<%@page import="ru.igor.bancprocessingan.servlets.AttributeConst"%>
+<%@page import="ru.igor.bankprocessingan.entities.User"%>
+<%@page import="ru.igor.bankprocessingan.servlets.AttributeConst"%>
 
 <%
 List<User> users = (List<User>)request.getAttribute(AttributeConst.USERS);

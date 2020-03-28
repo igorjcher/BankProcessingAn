@@ -1,9 +1,9 @@
-package ru.igor.bancprocessingan.listeners;
+package ru.igor.bankprocessingan.listeners;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import ru.igor.bancprocessingan.dao.HibernateUtill;
+import ru.igor.bankprocessingan.db.HibernateUtill;
 
 @WebListener
 public class AppContextListener implements ServletContextListener {
@@ -15,6 +15,8 @@ public class AppContextListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+        System.out.println("Before init Hibernate factory.");
         HibernateUtill.initFactory();
+        System.out.println("After init Hibernate factory.");
     } 
 }

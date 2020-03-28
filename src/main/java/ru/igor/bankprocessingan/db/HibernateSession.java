@@ -1,4 +1,4 @@
-package ru.igor.bancprocessingan.dao;
+package ru.igor.bankprocessingan.db;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

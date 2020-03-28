@@ -1,4 +1,4 @@
-package ru.igor.bancprocessingan.entities;
+package ru.igor.bankprocessingan.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

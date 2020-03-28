@@ -1,4 +1,4 @@
-package ru.igor.bancprocessingan.servlets;
+package ru.igor.bankprocessingan.servlets;
 
 public interface AttributeConst {
     String USER = "user";

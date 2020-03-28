@@ -1,6 +1,7 @@
-package ru.igor.bancprocessingan.dao;
+package ru.igor.bankprocessingan.dao;
 
-import ru.igor.bancprocessingan.entities.User;
+import ru.igor.bankprocessingan.db.HibernateSession;
+import ru.igor.bankprocessingan.entities.User;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
@@ -9,7 +10,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 @SessionScoped
-public class UserService implements Serializable {
+public class UserDao implements Serializable {
 
     @Inject
     private HibernateSession hibernateSession;
@@ -69,8 +70,8 @@ public class UserService implements Serializable {
             query.setParameter("amount", currentBalanceFrom);
             query.setParameter("email", user.getEmail());
             int executeUpdate = query.executeUpdate();
-            user.setBalance(currentBalanceFrom);
             tx.commit();
+            user.setBalance(currentBalanceFrom);
         } catch (Exception e) {
             tx.rollback();
             e.printStackTrace();
@@ -79,7 +80,7 @@ public class UserService implements Serializable {
 
     public void transfer(String emailTo, Integer amount, User user) {
 
-        if (emailTo == null || isExistedEmail(emailTo)) {
+        if (emailTo == null || !isExistedEmail(emailTo)) {
             throw new RuntimeException("Email is null or does not exist");
         }
 
@@ -108,8 +109,10 @@ public class UserService implements Serializable {
 
             int executeFrom = fromUser.executeUpdate();
             int executeTo = toUser.executeUpdate();
-
+            
             tx.commit();
+
+            user.setBalance(currentUserBalance);
         } catch (Exception e) {
             tx.rollback();
             e.printStackTrace();
@@ -128,4 +131,4 @@ public class UserService implements Serializable {
 
 //    public void logOut(HttpSession httpSession) {
 //        httpSession.invalidate();
-//    }
+//    } 1994700

@@ -1,20 +1,19 @@
 <%@ page pageEncoding="UTF-8" %>
 
-<%@page import="ru.igor.bancprocessingan.servlets.AttributeConst"%>
-<%@page import="ru.igor.bancprocessingan.entities.User"%>
+<%@page import="ru.igor.bankprocessingan.servlets.AttributeConst"%>
+<%@page import="ru.igor.bankprocessingan.entities.User"%>
 
 <%
-User user = (User) request.getSession().getAttribute(AttributeConst.USER);
+User userForMenu = (User) request.getSession().getAttribute(AttributeConst.USER);
 %>
 
 <ul>
-    <li><a href="welcomePage.jsp">Welcome page</a></li>
+    <li><a href="WelcomePage">Welcome page</a></li>
     <li><a href="LogOut">Log out</a></li>
-    <% if (user.isUser()) { %>
-        <li><a href=\"balance.html\">Balance</a></li>
-        <li><a href=\"BalanceCheck\">Balance check</a></li>
-        <li><a href=\"moneyInvest.jsp\">Deposit money</a></li>
-        <li><a href=\"moneyTransfer.jsp\">Transfer Money</a></li>
+    <% if (userForMenu.isUser()) { %>
+        <li><a href="BalanceCheck">Balance check</a></li>
+        <li><a href="moneyInvest.jsp">Deposit money</a></li>
+        <li><a href="moneyTransfer.jsp">Transfer Money</a></li>
     <% } %>
     <!--<li><a href=""></a></li>-->
 </ul>

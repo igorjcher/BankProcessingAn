@@ -15,6 +15,6 @@
         
         
         <!--<property name="hibernate.hbm2ddl.auto" value="update"/> -->
-        <mapping class="entities.User"/>
+        <mapping class="ru.igor.bankprocessingan.entities.User"/>
     </session-factory>
 </hibernate-configuration>

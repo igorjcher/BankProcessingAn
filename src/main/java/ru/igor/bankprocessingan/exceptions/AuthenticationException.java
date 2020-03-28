@@ -1,4 +1,4 @@
-package ru.igor.bancprocessingan.exceptions;
+package ru.igor.bankprocessingan.exceptions;
 
 import java.io.IOException;
 import java.io.PrintWriter;
